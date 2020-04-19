@@ -1,0 +1,25 @@
+<form  (ngSubmit)="connexion()" #myform="ngForm" >
+<table class="table" >
+<tr><td colspan="2"><h1>Connexion</h1></td></tr>
+<tr><td>Email:</td><td><input class="form-control" [(ngModel)]="user.email" name="email"  #email="ngModel" type="email" required>
+<br>    <div [hidden]="email.valid || email.pristine"
+class="alert alert-danger">
+Veuillez saisir un email valide</div>
+</td></tr>
+<tr><td>Mot de passe:</td><td><input  class="form-control" [(ngModel)]="user.mdp" name="mdp"  #mdp="ngModel" type="password" required><br>
+
+<br>   <div [hidden]="mdp.valid || mdp.pristine"
+class="alert alert-danger">
+Veuillez saisir un Mot de passe valide</div>
+
+</td></tr>
+<tr><td colspan="2"><input class="btn btn-primary" [disabled]="!myform.valid" type="submit" value="connexion">
+
+
+</td></tr>
+
+</table>
+
+
+
+</form>
